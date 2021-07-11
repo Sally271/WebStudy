@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Git Bash 터미널 계정 변경</title>
+</head>
+<body>
+    <h1>Git Bash 터미널 계정 변경</h1>
+    <h2>1. Windows 자격 증명 변경</h2>
+    <p>
+        Windows에서 '자격 증명' 에 들어가서,<br>
+        git:https://github.com 에서 '편집'<br>
+        이후 계정 입력 + 저장 -> 이러면 해당 Repository에 접근할 권한을 획득한 것.
+    </p>
+
+    <h2>2. 사용자 정보 수정</h2>
+    <p>
+        현재 활성화된 계정 정보 확인을 위해 cmd나 Git Bash에<br>
+        <b>git config --global user.name</b> 을 치면 확인 가능. 이상한 놈으로 돼있으면<br>
+        <b>git config --global user.name "userid"</b><br>
+        <b>git config --global user.email "useremail"</b> 입력<br>
+        이후 <b>git config --global user.name</b> 쳐보면 바뀐 것 확인 가능.
+    </p>
+
+    <h2>의문점</h2>
+    <p>
+        아무 생각 없이 Git Bash 켜서 commit하고 push한건데<br>
+        왜 다른사람걸로 올라갔지? 거기다가 로그인창까지 떴는데 이러면 내껄로 올라가야하는거 아닌가<br>
+        거기다가 write 권한 다른사람한테 준적도 없는데;;
+    </p>
+</body>
+</html>
