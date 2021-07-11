@@ -117,9 +117,34 @@
 
     <h2>단순예시 4</h2>
     <b>내가 편집하기 전 Github에 더 최신 버전이 업데이트되어있는 경우</b>
-    <P>
+    <p>
         "push 전엔 pull이 있다"를 기억하자.<br>
         <b>git pull origin master</b>로 꼭 땡겨온 후에 작업하자.<br>
-    </P>
+    </p>
+
+    <h2>이후 깨달은 것</h2>
+    <p>
+        https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html 를 참조함<br>
+        일단 push는 크게 세 단계로 이뤄지는듯. add -> commit -> push<br>
+        add를 하면 "staging"(즉, <b>git add .</b> 을 하면 모든 파일을 "Staging Area에 넣는다")<br>
+        이때 add를 취소하려면 <b>git reset --mixed HEAD</b> -> commit을 취소하고 파일들은 unstaged 상태로 워킹 디렉토리에 보존.<br>
+        여기서 -- 다음에 오는건 soft, mixed, hard가 있는데 mixed가 기본이고(즉, -- 없이 그냥 reset HEAD 하면 mixed로 됨)<br>
+        soft는 commit만 취소, 파일들은 staged로 보존,<br>
+        hard는 commit 취소와 함께 working directory의 파일들까지 삭제.<br>
+        즉, hard는 Remote에 있는 마지막 commit 이후의 working dir.와 add했던 파일들이 모두 사라지므로 주의!<br>
+        https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Reset-%EB%AA%85%ED%99%95%ED%9E%88-%EC%95%8C%EA%B3%A0-%EA%B0%80%EA%B8%B0<br>
+        자세하게는 위를 참고하자.
+    </p>
+
+    <h2>아니 근데 그래서,,,,</h2>
+    <p>
+        워킹 디렉토리랑 실제 내가 편집하고 있는 파일들이 있는 로컬 폴더는 또 다른건가????<br>
+        <b>git reset --hard HEAD</b> 를 했는데 그냥 "nothing to commit, working tree clean"이라고만 뜸.<br>
+        그러고 이 파일에다가 몇줄 더 쓴 다음 저장하려했더니 VS code 상에서 에러메세지가 뜸.<br>
+        overwrite할래 아님 restore할래?라고....<br>
+        그래서 일단 overwrite한 다음 다시 <b>git status</b> 해보니 이젠 또 modified에 얘가 뜨네?<br>
+        도대체 이해가 안되는군;; commit이 어디까지 되어있다는걸까? 파일들은 다 그대로인걸 보면 뭐 자동저장이라도 돼있나?<br>
+        일단 커밋해야지....
+    </p>
 </body>
 </html>
