@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>간단 Linux 명령어</title>
+</head>
+<body>
+    <h1>간단 linux 명령어</h1>
+
+    <dl>
+        <dt><b>cd <i>dir</i></b></dt>
+        <dd>
+            change directory.<br>
+            ex) <b>cd ..</b> -> 한 단계 상위 폴더로 이동<br>
+            ex) <b>cd desktop/WebStudy</b> -> 바탕화면의 WebStudy 폴더로 이동<br>
+        </dd><br>
+        <dt><b>ls</b></dt>
+        <dd>
+            list directory contents.<br>
+            ex) <b>ls -al</b> -> -a: all, -l: list(파일 정보를 상세히 보여줌)<br>
+        </dd><br>
+        <dt><b>echo "<i>contents</i>" > <i>file</i></b></dt>
+        <dd>
+            <b>echo</b>는 원래 텍스트나 문자열을 그대로 보여주는(출력하는) 명령어.<br>
+            ex) <b>echo "Geeks for Geeks"</b> -> 터미널에 Geeks for Geeks 가 출력됨.<br>
+            리눅스 커널에서 간단한 파일 생성 저장용으로 유용히 쓰일 수 있음.<br>
+            ex) <b>echo "hello world" > index.html</b> -> index.html 파일을 만들고 거기에 hello world가 쓰임.
+        </dd><br>
+        <dt><b>cat <i>file</i></b></dt>
+        <dd>
+            concatenate. 파일 이름을 인자로 받아서 그 내용을 쭉 이어주는 역할을 한다.<br>
+            즉, 어떤 내용을 그냥 그대로 터미널 화면에 뿌려주는 역할이다.<br>
+            ex) <b>cat index.html</b> -> index.html의 내용을 보여줌. (literally)
+        </dd><br>
+        <dt><b>mv <i>file1</i> <i>file2</i></b></dt>
+        <dd>
+            move. 말그대로 파일을 옮기는 역할을 하는 명령어인데<br>
+            파일 이름을 바꾸고 싶을 때 쓸 수 있다. 위와 같이 쓰이면 file1이 file2로 복제되고 file1이 영구삭제됨.<br>
+            ex) <b>mv index.html Git.html</b> -> index.html이 Git.html로 이름이 바뀌는 효과.
+        </dd><br>
+    </dl>
+</body>
+</html>
