@@ -46,5 +46,15 @@
         즉, 각각의 branch는 각각의 독립된 작업영역을 가진다.<br>
         ide의 터미널을 이용해서 branch를 바꿔가면서 작업해보면 체감이 쉬움.<br>
     </p>
+
+    <h2>Commit 병합</h2>
+    <p>
+        master branch에서 c3, 이후 여기서 분기한 test branch에서 c4의 commit을 했다고 치고,<br>
+        c4를 master의 C3에 반영하려 한다. -> c5의 생성.<br>
+        이 때 깃 커밋 병합 방법은 1. fast-forward 2. 3way 방식이 있는데,<br>
+        기본 명령인 <b>merge</b>를 사용하면 fast-forward 방식을 쓰게 된다.<br>
+        <b>git checkout master</b> 로 master branch로 이동한 후<br>
+        <b>git merge test</b> 를 하게 되면 test의 최신 commit들이 fast-forward 방식으로 master로 병합된다.<br>
+    </p>
 </body>
 </html>
