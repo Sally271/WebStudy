@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Git Intro - 1</title>
 </head>
+
 <body>
     <h1>Git Intro - 1</h1>
     Following osam.kr Git lecture.<br>
@@ -50,11 +52,36 @@
     <h2>Commit 병합</h2>
     <p>
         master branch에서 c3, 이후 여기서 분기한 test branch에서 c4의 commit을 했다고 치고,<br>
-        c4를 master의 C3에 반영하려 한다. -> c5의 생성.<br>
+        c4를 master의 c3에 반영하려 한다. -> c5의 생성.<br>
         이 때 깃 커밋 병합 방법은 1. fast-forward 2. 3way 방식이 있는데,<br>
         기본 명령인 <b>merge</b>를 사용하면 fast-forward 방식을 쓰게 된다.<br>
         <b>git checkout master</b> 로 master branch로 이동한 후<br>
         <b>git merge test</b> 를 하게 되면 test의 최신 commit들이 fast-forward 방식으로 master로 병합된다.<br>
     </p>
+
+    <h2>잘못된 커밋의 삭제 및 되돌리기</h2>
+    <p>
+        c1 -> c2 -> c3 -> c4 -> c5 에서, c5에 오류가 있어 c3로 코드를 되돌리고 c4를 지우고 싶은 경우.<br>
+        <b>reset</b> 명령어를 사용할 수 있다. 이 때 어느 지점으로 돌아갈지를 알려주어야 하는데,<br>
+        특정 커밋으로 되돌아가기 위해서는 해당 커밋의 ID를 입력해야 한다.<br>
+        마지막 커밋은 HEAD라는 이름을 가지고 있는데, 이를 이용할 수 있다.<br>
+        HEAD에 ^ 하나를 붙이면 그 이전, ^^면 전전... 이라는 식으로 ^를 이용할 수 있다.<br>
+        ex) <b>git reset HEAD^^</b> -> c5에서 c3로 돌아갈 수 있다.<br>
+        <br>
+        reset에는 세가지 모드가 존재 - soft, mixed, hard. 아무 옵션을 주지 않으면 mixed로 적용.<br>
+        soft와 mixed는 커밋만 삭제하고 작업 내용은 그대로지만,<br>
+        hard는 작업내용까지 싹 다 삭제. 주의해야 한다.<br>
+        또한, Github등에 공개된 로컬 저장소의 경우 reset 커밋을 하면 골때린다.<br>
+        로컬에서 c3로 리셋(c4, c5 삭제)한 후 push를 하면 그 때,<br>
+        이미 이전에 c5까지 있던 상태에서 pull받아서 편집중인 다른 사람이 있을 수 있다.<br>
+        그럼 그 사람이 편집 후 push를 하려고 할 때 오류가 발생한다.<br>
+        따라서 이런 경우 c3와 똑같은 버전의 c6를 만들어 push하는것이 바람직하다.<br>
+        그 역할을 하는 커밋(c6)이 <b>revert</b> 이다.<br>
+        <br>
+        commit(c5)을 한 이후, <b>git revert HEAD</b> 를 하면 HEAD에서 한 단계 뒤로 후진한다.<br>
+        근데 이 때 c5를 삭제하고 c4로 돌아가는게 아닌, c4를 c6에 만드는 식으로 진행된다.<br>
+    </p>
+
 </body>
+
 </html>

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>깃허브 연습 겸 HTML도 연습</title>
 </head>
+
 <body>
     <h1>초간단 깃허브 사용법 요약</h1>
-        (210711) 본 글은 유튜브 https://youtu.be/tC8Xj_Bf8Fw 영상을 바탕으로 최초 쓰임.<br>
-        https://evan-moon.github.io/2019/07/25/git-tutorial/ -> 이 글도 참고함<br>
-        (210712) 국방오픈소스아카데미(osam.kr)의 GitHub 입문 강좌를 참고해 편집함.<br>
-        강의자 이호진은 &lt;Git 교과서&gt;의 저자이다. 책은 https://git.jiny.dev/ 에서 볼 수 있다.
+    (210711) 본 글은 유튜브 https://youtu.be/tC8Xj_Bf8Fw 영상을 바탕으로 최초 쓰임.<br>
+    https://evan-moon.github.io/2019/07/25/git-tutorial/ -> 이 글도 참고함<br>
+    (210712) 국방오픈소스아카데미(osam.kr)의 GitHub 입문 강좌를 참고해 편집함.<br>
+    강의자 이호진은 &lt;Git 교과서&gt;의 저자이다. 책은 https://git.jiny.dev/ 에서 볼 수 있다.
 
     <h2>Git?</h2>
     <p>
@@ -84,7 +86,8 @@
             local folder와 Git과의 sync check.<br>
             깃은 "상태"(status)라는 개념이 있음. 이는 효율적인 코드 이력의 관리를 위함.<br>
             Git Bash에다 쳐보면 "use "git add &lt;file&gt;..." to include in what will be committed" 라고 뜸<br>
-            참고로 &lt;는 <b>&amp;lt;</b> (less than)라고 쳐야 표시된다. &gt;는 <b>&amp;gt;</b> (greater than). 그럼 &amp;는? <b>&amp;amp;</b>
+            참고로 &lt;는 <b>&amp;lt;</b> (less than)라고 쳐야 표시된다. &gt;는 <b>&amp;gt;</b> (greater than). 그럼 &amp;는?
+            <b>&amp;amp;</b>
         </dd><br>
         <dt><b>git add .</b></dt>
         <dd>git status로 확인한 모든 변경된 파일들을 tracking해달라는 뜻. (스페이스와 .까지 명령어에 포함됨)</dd><br>
@@ -99,10 +102,12 @@
             </b><br>
             이런 에러 메세지가 뜬다면, 에러메세지가 말해주는대로<br>
             <b>
-                $ git config --global user.name "user name"<br>
-                $ git config --global user.email "user e-mail"
+                $ git config --global user.name <i>username</i><br>
+                $ git config --global user.email <i>user_email</i>
             </b><br>
             이라고 적어주면 된다.<br>
+            <b>git config user.name</b> , <b>git config user.email</b> 을 통해<br>
+            유저 현황을 알 수 있다.<br>
             이후 <b>git log</b>를 통해 commit 여부를 확인할 수 있다.
         </dd><br>
         <dt><b>git push origin master</b></dt>
@@ -196,4 +201,5 @@
         staging 이후 파일을 수정하면 unstage로 자동으로 바낌.(워킹디렉토리로 돌아감)<br>
     </p>
 </body>
+
 </html>
