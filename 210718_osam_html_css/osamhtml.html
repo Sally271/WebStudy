@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#ref1">ref1로 이동</a>     <!--내부 링크(anchor)-->
+    <a href="https://www.google.com" target="_blank">구글로 이동</a>    <!--외부 링크-->
+    <br>
+    <!--내부 리소스 이미지 사용 방법-->
+    <img src="./images/apollo_11.jpg" alt="Saturn V 로켓의 flume" width="500">
+    <!--src 속성의 경로는 해당 html파일 기준-->
+    <!--alt 속성은(alternative) 대체 텍스트를 제공-->
+    <!--width는 그냥 숫자만 쓰면 px, %를 붙이면 비율로 자동으로 resize됨-->
+    <!--width height는 각자 쓰면 비율 유지, 같이 쓰면 비율 깨짐-->
+    <br>
+    <!--외부 리소스 이미지 사용 방법-->
+    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google logo">
+    <!--Chrome 브라우저에서 이미지 아무거나 새 탭 위치에 드래그하면 서버 경로 알 수 있음-->
+    <!--이걸 a태그에 넣으면?!-->
+    <a href="https://www.google.com" target="_blank">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google logo">
+    </a>
+    <!--이미지를 링크 아이콘으로 사용할 수 있다-->
+    <br>
+    <p><strong>주의:</strong> <em>의도치 않은 페이지</em>로 넘어갈 수 있음</p>
+    <!--strong과 em 태그는   각각 important와 emphasis의 뜻-->
+    <!--important와 emphasis의 맥락에 맞게 잘 사용하자-->
+    <!--strong 안에 em을 쓰거나, em 안에 strong을 쓰는건 꽤 자주 있음-->
+    <p><b>주의:</b> <i>의도치 않은 페이지</i>로 넘어갈 수 있음</p>
+    <!--b와 i는 strong, em이 의미를 담는데 비해 시각적 스타일만을 위한 태그이다-->
+    <h2 id="ref1" style="margin-top: 1500px;">오늘의 할일</h2>
+    <ul>
+        <li>폭군이 되는 법 감상</li>
+        <li>스티브 잡스  읽기</li>
+        <li>일기 쓰기</li>
+    </ul>
+    <ol type="I">   <!--type을 통해 어떻게 넘버링할지 정할 수 있다!-->
+        <li>강민구 처리하기</li>
+        <li>김영인 처리하기</li>
+    </ol>
+    <dl>            <!--dl 태그는 정의형 목록 태그-->
+        <dt>라자냐</dt>
+        <dd>라자냐는 맛있는 음식이다.</dd>
+    </dl>
+
+    <p style="margin-top: 2000px;"></p>
+</body>
+</html>
